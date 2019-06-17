@@ -13,8 +13,10 @@ using System.Windows.Forms;
 
 namespace progforreznik
 {
+    
     public partial class Form1 : Form
     {
+        public int reg1;
         SqlConnection sqlConnection;
         public Form1()
         {
@@ -224,10 +226,12 @@ namespace progforreznik
 
         private void button6_Click(object sender, EventArgs e)
         {
+            /*
             if (monthCalendar1.Visible)
                 monthCalendar1.Visible = false;
             else
                 monthCalendar1.Visible = true;
+                */
         }
 
         private async void button2_Click(object sender, EventArgs e)
@@ -290,5 +294,63 @@ namespace progforreznik
         {
             
         }
+
+        private void Button10_Click(object sender, EventArgs e)
+        {
+            bool[] index = new bool[dataGridView1.Rows.Count];
+            string[] row = new string[6];
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if (Convert.ToBoolean(dataGridView1["Column1", dataGridView1.Rows.Count - (i+1)].Value))
+                {
+                    index[i] = true;
+                }
+                else
+                    index[i] = false;
+            }
+
+            for (int i = 0; i < index.Length; i++)
+            {
+                if (index[i])
+                {
+                    index[i] = false;
+
+                    i = index.Length - i - 1;
+                    row[0] = Convert.ToString(dataGridView1["c1", i].Value);
+                    row[1] = Convert.ToString(dataGridView1["c2", i].Value);
+                    row[2] = Convert.ToString(dataGridView1["c3", i].Value);
+                    row[3] = Convert.ToString(dataGridView1["Column4", i].Value);
+                    row[4] = Convert.ToString(dataGridView1["Column5", i].Value);
+                    row[5] = Convert.ToString(dataGridView1["Column7", i].Value);
+                    pacient_analyses form2 = new pacient_analyses(index, row, sqlConnection);
+                    form2.Owner = this;
+                    form2.ShowDialog();
+                    ///Форма///
+                    form2.RemoveOwnedForm(form2);
+                    
+                    i = 0;
+
+                }
+
+            }
+
+            
+
+
+
+            
+            /*
+            dataGridView1["Column2", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["Id"]);
+            dataGridView1["c1", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["FName"]);
+            dataGridView1["c2", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["LName"]);
+            dataGridView1["c3", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["OName"]);
+            dataGridView1["Column4", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["Pol"]);
+            dataGridView1["Column5", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["Birsday"]);
+            dataGridView1["Column8", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["Date_tb"]);
+            dataGridView1["Column7", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["Comment"]);
+            */
+        }
+        
     }
 }

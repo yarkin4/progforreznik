@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -109,9 +111,6 @@
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.обновитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -150,7 +149,6 @@
             // 
             this.tabPage1.Controls.Add(this.button10);
             this.tabPage1.Controls.Add(this.button9);
-            this.tabPage1.Controls.Add(this.monthCalendar1);
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.textBox10);
@@ -177,6 +175,26 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Пациенты";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(781, 117);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(150, 47);
+            this.button10.TabIndex = 23;
+            this.button10.Text = "Изменить выбранных пациентов";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.Button10_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(781, 46);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(150, 47);
+            this.button9.TabIndex = 22;
+            this.button9.Text = "Удалить выбранных пациентов";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button6
             // 
@@ -870,31 +888,6 @@
             this.обновитьToolStripMenuItem.Text = "Обновить";
             this.обновитьToolStripMenuItem.Click += new System.EventHandler(this.обновитьToolStripMenuItem_Click);
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(161, 106);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 21;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(781, 46);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(150, 47);
-            this.button9.TabIndex = 22;
-            this.button9.Text = "Удалить выбранных пациентов";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(781, 117);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(150, 47);
-            this.button10.TabIndex = 23;
-            this.button10.Text = "Изменить выбранных пациентов";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1013,7 +1006,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column20;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
     }

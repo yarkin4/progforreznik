@@ -22,3 +22,16 @@ E:\progforreznik\progforreznik\bin\Debug\Database_log.ldf
 E:\progforreznik\progforreznik\bin\Debug\progforreznik.exe.config
 E:\progforreznik\progforreznik\bin\Debug\progforreznik.exe
 E:\progforreznik\progforreznik\bin\Debug\progforreznik.pdb
+C:\Users\copy\source\repos\progforreznik\progforreznik\obj\Debug\progforreznik.csprojAssemblyReference.cache
+C:\Users\copy\source\repos\progforreznik\progforreznik\obj\Debug\progforreznik.Form1.resources
+C:\Users\copy\source\repos\progforreznik\progforreznik\obj\Debug\progforreznik.pacient_analyses.resources
+C:\Users\copy\source\repos\progforreznik\progforreznik\obj\Debug\progforreznik.Properties.Resources.resources
+C:\Users\copy\source\repos\progforreznik\progforreznik\obj\Debug\progforreznik.csproj.GenerateResource.cache
+C:\Users\copy\source\repos\progforreznik\progforreznik\obj\Debug\progforreznik.csproj.CoreCompileInputs.cache
+C:\Users\copy\source\repos\progforreznik\progforreznik\obj\Debug\progforreznik.exe
+C:\Users\copy\source\repos\progforreznik\progforreznik\obj\Debug\progforreznik.pdb
+C:\Users\copy\source\repos\progforreznik\progforreznik\bin\Debug\Database.mdf
+C:\Users\copy\source\repos\progforreznik\progforreznik\bin\Debug\Database_log.ldf
+C:\Users\copy\source\repos\progforreznik\progforreznik\bin\Debug\progforreznik.exe.config
+C:\Users\copy\source\repos\progforreznik\progforreznik\bin\Debug\progforreznik.exe
+C:\Users\copy\source\repos\progforreznik\progforreznik\bin\Debug\progforreznik.pdb
