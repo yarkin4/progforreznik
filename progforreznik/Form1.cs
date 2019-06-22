@@ -71,8 +71,10 @@ namespace progforreznik
             dataGridView3.Rows.Clear();
             dataGridView4.Rows.Clear();
             dataGridView5.Rows.Clear();
-            //////////////////// Пациенты
+
             SqlDataReader sqlReader = null;
+            //////////////////// Пациенты
+
 
             SqlCommand command = new SqlCommand("SELECT * FROM Pacient ORDER BY id DESC;", sqlConnection);
 
@@ -298,7 +300,7 @@ namespace progforreznik
         private void Button10_Click(object sender, EventArgs e)
         {
             bool[] index = new bool[dataGridView1.Rows.Count];
-            string[] row = new string[6];
+            string[] row = new string[7];
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
@@ -323,7 +325,8 @@ namespace progforreznik
                     row[3] = Convert.ToString(dataGridView1["Column4", i].Value);
                     row[4] = Convert.ToString(dataGridView1["Column5", i].Value);
                     row[5] = Convert.ToString(dataGridView1["Column7", i].Value);
-                    pacient_analyses form2 = new pacient_analyses(index, row, sqlConnection);
+                    row[6] = Convert.ToString(dataGridView1["Column2", i].Value);
+                    pacient_analyses form2 = new pacient_analyses(row, sqlConnection);
                     form2.Owner = this;
                     form2.ShowDialog();
                     ///Форма///
@@ -336,20 +339,7 @@ namespace progforreznik
             }
 
             
-
-
-
-            
-            /*
-            dataGridView1["Column2", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["Id"]);
-            dataGridView1["c1", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["FName"]);
-            dataGridView1["c2", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["LName"]);
-            dataGridView1["c3", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["OName"]);
-            dataGridView1["Column4", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["Pol"]);
-            dataGridView1["Column5", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["Birsday"]);
-            dataGridView1["Column8", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["Date_tb"]);
-            dataGridView1["Column7", dataGridView1.Rows.Count - 1].Value = Convert.ToString(sqlReader["Comment"]);
-            */
+           
         }
         
     }
