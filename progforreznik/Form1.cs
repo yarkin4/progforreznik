@@ -292,10 +292,44 @@ namespace progforreznik
             await command.ExecuteNonQueryAsync();
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private async void button9_Click(object sender, EventArgs e)
         {
-            
+            bool[] index = new bool[dataGridView1.Rows.Count];
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if (Convert.ToBoolean(dataGridView1["Column1", dataGridView1.Rows.Count - (i + 1)].Value))
+                {
+                    index[i] = true;
+                }
+                else
+                    index[i] = false;
+            }
+
+            for (int i = 0; i < index.Length; i++)
+            {
+                if (index[i])
+                {
+                    index[i] = false;
+
+                    i = index.Length - i - 1;
+
+                    SqlCommand command = new SqlCommand(
+                "DELETE FROM Pacient WHERE id=@id;"
+
+                , sqlConnection);
+
+                    command.Parameters.AddWithValue("id", Convert.ToInt32(dataGridView1["Column2", i].Value));
+
+                    await command.ExecuteNonQueryAsync();
+
+                    i = 0;
+                }
+
+            }
+
         }
+            
 
         private void Button10_Click(object sender, EventArgs e)
         {
